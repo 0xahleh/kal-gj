@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import LuasLingkaran from './komponen/lingkaran';
+import LuasSegitiga from './komponen/segitiga';
+import Persegi from './komponen/persegi';
+import Home from './page/Home';
+import { BrowserRouter, Routes, Route,} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/lingkaran" element={<LuasLingkaran/>} />
+          <Route path="/segitiga" element={<LuasSegitiga/>} />
+          <Route path="/persegi" element={<Persegi />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
